@@ -14,20 +14,23 @@
 		<header class="header">
 			<div class="container">
 				<div class="header__container">
-					<a href="/index.html" class="a logo">CITRUS</a>
+					<a href="/" class="a logo">CITRUS</a>
 					<nav class="header__register">
 						<p class="header__text--first">register with</p>
-						<div class="header__links">
-							<div class="header__links--mobile header__link active">
-								<a href="#"
-									><img src="assets/phone.svg" alt="Phone" />
-									<p class="header__text--link">mobile</p></a
+						<div class="header__links" id="headerLinks">
+							<div
+								class="header__links--mobile header__link active"
+								id="tabPhone"
+							>
+								<a href="#" id="mobile"
+									><img src="assets/phone.svg" id="mobile" alt="Phone" />
+									<p class="header__text--link" id="mobile">mobile</p></a
 								>
 							</div>
-							<div class="header__links--email header__link">
-								<a href="#">
-									<img src="assets/email.svg" alt="Email" />
-									<p class="header__text--link">email</p></a
+							<div class="header__links--email header__link" id="tabEmail">
+								<a href="#" id="email">
+									<img src="assets/email.svg" alt="Email" id="email" />
+									<p class="header__text--link" id="email">email</p></a
 								>
 							</div>
 						</div>
@@ -41,16 +44,28 @@
 				<div class="container--wide container--main">
 					<form action="" class="form container--narrow">
 						<fieldset class="formGroup">
-							<label class="label--block label" for="number"
-								>Phone number</label
-							>
-							<input
-								class="input"
-								type="tel"
-								name="number"
-								id="number"
-								required
-							/>
+							<div class="formGroup--hideable active" id="phoneFormGroup">
+								<label class="label--block label" for="number"
+									>Phone number</label
+								>
+								<input
+									class="input"
+									type="tel"
+									name="number"
+									id="number"
+									required
+								/>
+							</div>
+							<div class="formGroup--hideable" id="emailFormGroup">
+								<label class="label--block label" for="email">Email</label>
+								<input
+									class="input"
+									type="email"
+									name="email"
+									id="email"
+									required
+								/>
+							</div>
 						</fieldset>
 						<fieldset class="formGroup">
 							<label class="label--block label" for="password">Password</label>
@@ -132,7 +147,12 @@
 							REGISTER
 						</button>
 					</form>
-					<img src="assets/illustrationMobile.svg" class="illustration" alt="Illustration" />
+					<img
+						src="assets/illustrationMobile.svg"
+						class="illustration"
+						alt="Illustration"
+						id="illustration"
+					/>
 				</div>
 			</div>
 		</main>
@@ -146,6 +166,6 @@
 				</p>
 			</div>
 		</footer>
-		<script src="main.js"></script>
+		<script src="main.js" defer></script>
 	</body>
 </html>

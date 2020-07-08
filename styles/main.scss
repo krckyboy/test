@@ -63,15 +63,15 @@ body {
 
 	&--wide {
 		max-width: 1440px;
-    }
-    
-    &--outer {
-        margin: 0 auto;
-        max-width: 512px;
-        @media (min-width: 1260px) {
-            max-width: 1440px;
-        }
-    }
+	}
+
+	&--outer {
+		margin: 0 auto;
+		max-width: 512px;
+		@media (min-width: 1260px) {
+			max-width: 1440px;
+		}
+	}
 
 	&--main {
 		@media (min-width: 1260px) {
@@ -92,6 +92,7 @@ body {
 
 .illustration {
 	display: none;
+	transition: opacity 0.3s;
 
 	@media (min-width: 1260px) {
 		align-self: flex-end;
@@ -115,7 +116,7 @@ body {
 		left: 0;
 		margin: 0px auto;
 		width: 128px;
-		background: #408A60;
+		background: #408a60;
 	}
 }
 
@@ -141,7 +142,7 @@ body {
 		margin-left: 12px;
 
 		span {
-			color: #408A60;
+			color: #408a60;
 			font-weight: bold;
 		}
 	}
@@ -151,8 +152,8 @@ body {
 	width: 100%;
 	padding: 12px 0;
 	color: #f2f2f2;
-	background-color: #408A60;
-	border: 2px solid #408A60;
+	background-color: #408a60;
+	border: 2px solid #408a60;
 	font-family: Rajdhani;
 	font-style: normal;
 	font-weight: bold;
@@ -224,6 +225,14 @@ body {
 		flex-direction: column;
 		align-content: flex-start;
 	}
+
+	&--hideable {
+		display: none;
+	}
+
+	&--hideable.active {
+		display: initial;
+	}
 }
 
 .currencyContainer {
@@ -258,7 +267,7 @@ body {
 .a {
 	font-weight: bold;
 	font-size: 18px;
-	color: #408A60;
+	color: #408a60;
 	text-decoration: none;
 }
 
@@ -338,13 +347,13 @@ body {
 		transition: 0.2s border, 0.2s background-color;
 
 		&:hover {
-			background-color: #408A60;
+			background-color: #408a60;
 			border: 2px solid #fff !important;
 		}
 	}
 
 	&__link.active {
-		background-color: #408A60;
+		background-color: #408a60;
 		border: 2px solid transparent;
 	}
 }

@@ -105,6 +105,8 @@ body {
 
 .illustration {
   display: none;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 @media (min-width: 1260px) {
@@ -132,7 +134,7 @@ body {
   left: 0;
   margin: 0px auto;
   width: 128px;
-  background: #408A60;
+  background: #408a60;
 }
 
 .label {
@@ -159,7 +161,7 @@ body {
 }
 
 .label__checkbox span {
-  color: #408A60;
+  color: #408a60;
   font-weight: bold;
 }
 
@@ -167,8 +169,8 @@ body {
   width: 100%;
   padding: 12px 0;
   color: #f2f2f2;
-  background-color: #408A60;
-  border: 2px solid #408A60;
+  background-color: #408a60;
+  border: 2px solid #408a60;
   font-family: Rajdhani;
   font-style: normal;
   font-weight: bold;
@@ -242,6 +244,14 @@ body {
       align-content: flex-start;
 }
 
+.formGroup--hideable {
+  display: none;
+}
+
+.formGroup--hideable.active {
+  display: initial;
+}
+
 .currencyContainer {
   padding-left: 24px;
   display: -webkit-box;
@@ -282,7 +292,7 @@ body {
 .a {
   font-weight: bold;
   font-size: 18px;
-  color: #408A60;
+  color: #408a60;
   text-decoration: none;
 }
 
@@ -387,12 +397,12 @@ body {
 }
 
 .header__link:hover {
-  background-color: #408A60;
+  background-color: #408a60;
   border: 2px solid #fff !important;
 }
 
 .header__link.active {
-  background-color: #408A60;
+  background-color: #408a60;
   border: 2px solid transparent;
 }
 
