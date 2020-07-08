@@ -31,7 +31,7 @@ ul {
 }
 
 fieldset {
-    border: none;
+	border: none;
 }
 // </Resetting styles>
 
@@ -63,6 +63,41 @@ body {
 
 	&--wide {
 		max-width: 1440px;
+    }
+    
+    &--outer {
+        margin: 0 auto;
+        max-width: 512px;
+        @media (min-width: 1260px) {
+            max-width: 1440px;
+        }
+    }
+
+	&--main {
+		@media (min-width: 1260px) {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+	}
+}
+
+.form,
+.illustration {
+	@media (min-width: 1260px) {
+		flex: 1 1 auto;
+		align-self: stretch;
+	}
+}
+
+.illustration {
+	display: none;
+
+	@media (min-width: 1260px) {
+		align-self: flex-end;
+		height: 612px;
+		max-width: 50%;
+		display: initial;
 	}
 }
 
@@ -117,12 +152,12 @@ body {
 	padding: 12px 0;
 	color: #f2f2f2;
 	background-color: #236a41;
-	border: 2px solid #236a41 ;
+	border: 2px solid #236a41;
 	font-family: Rajdhani;
 	font-style: normal;
 	font-weight: bold;
-    font-size: 24px;
-    transition: border-color .2s;
+	font-size: 24px;
+	transition: border-color 0.2s;
 
 	&:focus,
 	&:active {
@@ -130,15 +165,13 @@ body {
 	}
 
 	&--submit {
-        margin-top: 56px;
-        cursor: pointer;
+		margin-top: 56px;
+		cursor: pointer;
 
-        &:hover {
-            border-color: white;
-        }
-    }
-    
-
+		&:hover {
+			border-color: white;
+		}
+	}
 }
 
 .input {
@@ -148,17 +181,17 @@ body {
 	display: block;
 	width: 100%;
 	color: #f2f2f2;
-    font-family: Rajdhani;
-    transition: all .2s;
+	font-family: Rajdhani;
+	transition: all 0.2s;
 
 	&:focus,
 	&:active {
 		outline-color: #f2f2f2;
-    }
-    
-    &:hover {
-        border-color: #949494;
-    }
+	}
+
+	&:hover {
+		border-color: #949494;
+	}
 
 	&--radio {
 		border: initial;
@@ -231,7 +264,7 @@ body {
 
 .header {
 	padding-top: 20px;
-    padding-bottom: 20px;
+	padding-bottom: 20px;
 
 	&__text--first {
 		margin-right: 16px;
@@ -285,7 +318,7 @@ body {
 			justify-content: center;
 			align-items: center;
 			text-decoration: none;
-            border-bottom: 2px solid transparent;
+			border-bottom: 2px solid transparent;
 
 			&:focus,
 			&:active {
@@ -300,9 +333,9 @@ body {
 
 		&:first-child {
 			margin-right: 8px;
-        }
-        
-        transition: .2s border, .2s background-color;
+		}
+
+		transition: 0.2s border, 0.2s background-color;
 
 		&:hover {
 			background-color: #276742;

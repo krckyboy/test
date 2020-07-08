@@ -66,6 +66,57 @@ body {
   max-width: 1440px;
 }
 
+.container--outer {
+  margin: 0 auto;
+  max-width: 512px;
+}
+
+@media (min-width: 1260px) {
+  .container--outer {
+    max-width: 1440px;
+  }
+}
+
+@media (min-width: 1260px) {
+  .container--main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media (min-width: 1260px) {
+  .form,
+  .illustration {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+  }
+}
+
+.illustration {
+  display: none;
+}
+
+@media (min-width: 1260px) {
+  .illustration {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    height: 612px;
+    max-width: 50%;
+    display: initial;
+  }
+}
+
 .h1 {
   font-size: 72px;
   font-weight: bold;
@@ -122,8 +173,8 @@ body {
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  -webkit-transition: border-color .2s;
-  transition: border-color .2s;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
 }
 
 .button:focus, .button:active {
@@ -147,8 +198,8 @@ body {
   width: 100%;
   color: #f2f2f2;
   font-family: Rajdhani;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .input:focus, .input:active {
@@ -302,8 +353,8 @@ body {
 .header__link {
   padding: 4px 8px;
   border: 2px solid #fff;
-  -webkit-transition: .2s border, .2s background-color;
-  transition: .2s border, .2s background-color;
+  -webkit-transition: 0.2s border, 0.2s background-color;
+  transition: 0.2s border, 0.2s background-color;
 }
 
 .header__link a {
