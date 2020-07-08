@@ -67,19 +67,35 @@ const state = {
 		},
 		form: () => {
 			const phoneFormGroup = document.getElementById('phoneFormGroup')
-			const emailFormGroup = document.getElementById('emailFormGroup')
+            const emailFormGroup = document.getElementById('emailFormGroup')
+            
+            const phoneInput = document.getElementById('number')
+            const emailInput = document.getElementById('emailInput')
 
 			if (state.tab === 'mobile') {
+				emailInput.required = false
 				update.animation.hideFieldSet(emailFormGroup)
 				setTimeout(() => {
+					phoneInput.required = true
 					update.animation.showFieldSet(phoneFormGroup)
 				}, 300)
 			} else {
+				phoneInput.required = false
 				update.animation.hideFieldSet(phoneFormGroup)
 				setTimeout(() => {
+					emailInput.required = true
 					update.animation.showFieldSet(emailFormGroup)
 				}, 300)
 			}
+		},
+		validate: {
+			passwords: () => {},
+			phone: () => {
+				validator.isMobilePhone()
+			},
+			email: () => {
+				validator.isEmail()
+			},
 		},
 	}
 
@@ -115,5 +131,12 @@ const state = {
 				await updateDOM()
 			}
 		}
+	})
+
+	// On submit
+	const form = document.getElementById('form')
+
+	form.addEventListener('submit', function (e) {
+		e.preventDefault()
 	})
 })()
