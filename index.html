@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Citrus Systems | Test | Registration</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" type="text/css" href="styles/main.css" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<div class="header__container">
+					<a href="/index.html" class="a logo">CITRUS</a>
+					<nav class="header__register">
+						<p class="header__text--first">register with</p>
+						<div class="header__links">
+							<div class="header__links--mobile header__link active">
+								<a href="#"
+									><img src="assets/phone.svg" alt="Phone" />
+									<p class="header__text--link">mobile</p></a
+								>
+							</div>
+							<div class="header__links--email header__link">
+								<a href="#">
+									<img src="assets/email.svg" alt="Email" />
+									<p class="header__text--link">email</p></a
+								>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="container container--narrow">
+				<h1 class="h1">Register</h1>
+				<div class="container--narrow">
+					<form action="" class="form">
+						<div class="formGroup">
+							<label class="label--block label" for="number"
+								>Phone number</label
+							>
+							<input
+								class="input"
+								type="tel"
+								name="number"
+								id="number"
+								required
+							/>
+						</div>
+						<div class="formGroup">
+							<label class="label--block label" for="password">Password</label>
+							<input
+								class="input"
+								type="password"
+								name="password"
+								id="password"
+								required
+							/>
+						</div>
+						<div class="formGroup">
+							<label class="label--block label" for="repeatPassword"
+								>Repeat password</label
+							>
+							<input
+								class="input"
+								type="password"
+								name="repeatPassword"
+                                required
+                                id="repeatPassword"
+							/>
+						</div>
+						<div class="formGroup">
+							<label class="label--block label" for="currency"
+								>Select currency</label
+							>
+							<div class="formGroup__currency">
+								<div class="currencyContainer">
+									<input
+										class="input input--radio currencyContainer__input"
+										type="radio"
+										name="currency"
+										id="dollar"
+										checked
+									/>
+									<label class="label label__currency" for="dollar"
+										>Dollar $</label
+									>
+								</div>
+								<div class="currencyContainer">
+									<input
+										class="input input--radio currencyContainer__input"
+										type="radio"
+										name="currency"
+										id="euro"
+									/>
+									<label class="label label__currency" for="euro">Euro €</label>
+								</div>
+							</div>
+							<div class="formGroup">
+								<div class="formGroup__checkbox">
+									<div class="checkboxContainer">
+										<input
+											class="input--checkbox"
+											type="checkbox"
+											name="terms"
+											id="terms"
+										/>
+										<label for="terms" class="label label__checkbox"
+											>I agree to the <span>terms and conditions</span></label
+										>
+									</div>
+									<div class="checkboxContainer">
+										<input
+											class="input--checkbox"
+											type="checkbox"
+											name="notifications"
+											id="notifications"
+										/>
+										<label for="notifications" class="label label__checkbox"
+											>I want to receive promo notifications</label
+										>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="button button--submit">
+							REGISTER
+						</button>
+					</form>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<p>
+					Made by
+					<a class="a" target="_blank" href="https://krcky.dev/"
+						>Dušan Todorović Krcky</a
+					>
+				</p>
+			</div>
+		</footer>
+		<script src="main.js"></script>
+	</body>
+</html>
