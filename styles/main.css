@@ -132,7 +132,7 @@ body {
   left: 0;
   margin: 0px auto;
   width: 128px;
-  background: #236a41;
+  background: #408A60;
 }
 
 .label {
@@ -159,7 +159,7 @@ body {
 }
 
 .label__checkbox span {
-  color: #236a41;
+  color: #408A60;
   font-weight: bold;
 }
 
@@ -167,8 +167,8 @@ body {
   width: 100%;
   padding: 12px 0;
   color: #f2f2f2;
-  background-color: #236a41;
-  border: 2px solid #236a41;
+  background-color: #408A60;
+  border: 2px solid #408A60;
   font-family: Rajdhani;
   font-style: normal;
   font-weight: bold;
@@ -282,7 +282,7 @@ body {
 .a {
   font-weight: bold;
   font-size: 18px;
-  color: #236a41;
+  color: #408A60;
   text-decoration: none;
 }
 
@@ -387,12 +387,12 @@ body {
 }
 
 .header__link:hover {
-  background-color: #276742;
+  background-color: #408A60;
   border: 2px solid #fff !important;
 }
 
 .header__link.active {
-  background-color: #276742;
+  background-color: #408A60;
   border: 2px solid transparent;
 }
 
