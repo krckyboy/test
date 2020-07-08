@@ -4,6 +4,7 @@
 const state = {
 	tab: 'mobile',
 	loading: false,
+	timeoutFunction: null,
 }
 
 ;(function () {
@@ -67,22 +68,24 @@ const state = {
 		},
 		form: () => {
 			const phoneFormGroup = document.getElementById('phoneFormGroup')
-            const emailFormGroup = document.getElementById('emailFormGroup')
-            
-            const phoneInput = document.getElementById('number')
-            const emailInput = document.getElementById('emailInput')
+			const emailFormGroup = document.getElementById('emailFormGroup')
+
+			const phoneInput = document.getElementById('number')
+			const emailInput = document.getElementById('emailInput')
 
 			if (state.tab === 'mobile') {
 				emailInput.required = false
 				update.animation.hideFieldSet(emailFormGroup)
-				setTimeout(() => {
+				if (state.timeoutFunction) clearTimeout(state.timeoutFunction)
+				state.timeoutFunction = setTimeout(() => {
 					phoneInput.required = true
 					update.animation.showFieldSet(phoneFormGroup)
 				}, 300)
 			} else {
 				phoneInput.required = false
-				update.animation.hideFieldSet(phoneFormGroup)
-				setTimeout(() => {
+                update.animation.hideFieldSet(phoneFormGroup)
+                if (state.timeoutFunction) clearTimeout(state.timeoutFunction)
+				state.timeoutFunction = setTimeout(() => {
 					emailInput.required = true
 					update.animation.showFieldSet(emailFormGroup)
 				}, 300)
