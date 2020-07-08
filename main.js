@@ -30,21 +30,19 @@ const state = {
 			if (state.tab === 'mobile') {
 				update.animation.hide(illustration)
 				setTimeout(() => {
-					state.loading = true
 					illustration.src = `assets/illustration${
 						state.tab[0].toUpperCase() + state.tab.slice(1)
 					}.svg`
 					update.animation.show(illustration)
-				}, 500)
+				}, 300)
 			} else {
 				update.animation.hide(illustration)
 				setTimeout(() => {
-					state.loading = true
 					illustration.src = `assets/illustration${
 						state.tab[0].toUpperCase() + state.tab.slice(1)
 					}.svg`
 					update.animation.show(illustration)
-				}, 500)
+				}, 300)
 			}
 		},
 		animation: {
@@ -54,6 +52,34 @@ const state = {
 			hide: (element) => {
 				element.style.opacity = 0
 			},
+			showFieldSet: (element) => {
+				element.style.display = 'block'
+				setTimeout(() => {
+					element.style.opacity = '1'
+				}, 50)
+			},
+			hideFieldSet: (element) => {
+				element.style.opacity = '0'
+				setTimeout(() => {
+					element.style.display = 'none'
+				}, 50)
+			},
+		},
+		form: () => {
+			const phoneFormGroup = document.getElementById('phoneFormGroup')
+			const emailFormGroup = document.getElementById('emailFormGroup')
+
+			if (state.tab === 'mobile') {
+				update.animation.hideFieldSet(emailFormGroup)
+				setTimeout(() => {
+					update.animation.showFieldSet(phoneFormGroup)
+				}, 300)
+			} else {
+				update.animation.hideFieldSet(phoneFormGroup)
+				setTimeout(() => {
+					update.animation.showFieldSet(emailFormGroup)
+				}, 300)
+			}
 		},
 	}
 
@@ -63,19 +89,15 @@ const state = {
 
 		// Update the illustration
 		await update.illustration()
+
 		// Update the form (number / email)
+		update.form()
 
 		state.loading = false
 	}
 
 	// Set up event listeners on the navigation
 	const headerLinks = document.getElementById('headerLinks')
-
-	headerLinks.addEventListener('mouseover', function (e) {
-		if (state.loading) {
-			headerLinks.disabled = true
-		}
-	})
 
 	headerLinks.addEventListener('click', async function (e) {
 		if (e.target.id === 'mobile') {

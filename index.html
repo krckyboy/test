@@ -43,8 +43,8 @@
 				<h1 class="h1">Register</h1>
 				<div class="container--wide container--main">
 					<form action="" class="form container--narrow">
-						<fieldset class="formGroup">
-							<div class="formGroup--hideable active" id="phoneFormGroup">
+						<fieldset class="formGroup formGroup--fixedHeight">
+							<div id="phoneFormGroup" class="transition">
 								<label class="label--block label" for="number"
 									>Phone number</label
 								>
@@ -56,7 +56,11 @@
 									required
 								/>
 							</div>
-							<div class="formGroup--hideable" id="emailFormGroup">
+							<div
+								style="display: none; opacity: 0;"
+								class="transition"
+								id="emailFormGroup"
+							>
 								<label class="label--block label" for="email">Email</label>
 								<input
 									class="input"

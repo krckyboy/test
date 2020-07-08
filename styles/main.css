@@ -91,6 +91,11 @@ body {
   }
 }
 
+.transition {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
 @media (min-width: 1260px) {
   .form,
   .illustration {
@@ -244,12 +249,10 @@ body {
       align-content: flex-start;
 }
 
-.formGroup--hideable {
-  display: none;
-}
-
-.formGroup--hideable.active {
-  display: initial;
+.formGroup--fixedHeight {
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+  min-height: 88px;
 }
 
 .currencyContainer {

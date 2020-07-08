@@ -82,6 +82,10 @@ body {
 	}
 }
 
+.transition {
+    transition: all .3s;
+}
+
 .form,
 .illustration {
 	@media (min-width: 1260px) {
@@ -224,15 +228,12 @@ body {
 		display: flex;
 		flex-direction: column;
 		align-content: flex-start;
-	}
-
-	&--hideable {
-		display: none;
-	}
-
-	&--hideable.active {
-		display: initial;
-	}
+    }
+    
+    &--fixedHeight {
+        transition: opacity .3s;
+        min-height: 88px;
+    }
 }
 
 .currencyContainer {
