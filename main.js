@@ -83,22 +83,105 @@ const state = {
 				}, 300)
 			} else {
 				phoneInput.required = false
-                update.animation.hideFieldSet(phoneFormGroup)
-                if (state.timeoutFunction) clearTimeout(state.timeoutFunction)
+				update.animation.hideFieldSet(phoneFormGroup)
+				if (state.timeoutFunction) clearTimeout(state.timeoutFunction)
 				state.timeoutFunction = setTimeout(() => {
 					emailInput.required = true
 					update.animation.showFieldSet(emailFormGroup)
 				}, 300)
 			}
 		},
-		validate: {
-			passwords: () => {},
-			phone: () => {
-				validator.isMobilePhone()
-			},
-			email: () => {
-				validator.isEmail()
-			},
+	}
+
+	const validate = {
+		passwords: () => {
+			const password = document.getElementById('password').value
+			const repeatPassword = document.getElementById('repeatPassword').value
+
+			const errObj = {
+				password: false,
+				repeatPassword: false,
+				passwordsMatch: false,
+			}
+
+			if (validator.isEmpty(password)) {
+				errObj.password = 'Please enter password.'
+			}
+
+			if (validator.isEmpty(repeatPassword)) {
+				errObj.repeatPassword = 'Please repeat password.'
+			}
+
+			if (!errObj.password && !errObj.repeatPassword) {
+				if (password !== repeatPassword) {
+					errObj.passwordsMatch = 'Passwords should match.'
+				}
+			}
+
+			// Get all values in an array
+			const errObjValues = Object.values(errObj)
+
+			// Return false if no error
+			// Return the errObj if validation fails
+			if (errObjValues.every((v) => v === false)) {
+				return false
+			} else {
+				return errObj
+			}
+		},
+		phone: () => {
+			const phone = document.getElementById('number').value
+
+			const errObj = {
+				number: false,
+				invalidNumber: false,
+			}
+
+			if (validator.isEmpty(phone)) {
+				errObj.number = 'Please enter phone number.'
+			} else {
+				if (!validator.isMobilePhone(phone)) {
+					errObj.invalidNumber = 'Please enter valid phone number.'
+				}
+			}
+
+			// Get all values in an array
+			const errObjValues = Object.values(errObj)
+
+			// Return false if no error
+			// Return the errObj if validation fails
+			if (errObjValues.every((v) => v === false)) {
+				return false
+			} else {
+				return errObj
+			}
+		},
+		email: () => {
+			const email = document.getElementById('emailInput').value
+
+			const errObj = {
+				email: false,
+				invalidEmail: false,
+			}
+
+			if (validator.isEmpty(email)) {
+				errObj.email = 'Please enter your email.'
+			} else {
+				if (!validator.isEmail(email)) {
+					errObj.invalidEmail = 'Please enter valid email.'
+				}
+			}
+
+			// Get all values in an array
+			const errObjValues = Object.values(errObj)
+
+			// Return false if no error
+			// Return the errObj if validation fails
+			if (errObjValues.every((v) => v === false)) {
+				return false
+			} else {
+				return errObj
+			}
 		},
 	}
 
@@ -111,8 +194,6 @@ const state = {
 
 		// Update the form (number / email)
 		update.form()
-
-		state.loading = false
 	}
 
 	// Set up event listeners on the navigation
@@ -141,5 +222,39 @@ const state = {
 
 	form.addEventListener('submit', function (e) {
 		e.preventDefault()
+
+		// Validate fields
+		// If the result is false, there's no error.
+		const validationErrors = {
+			password: validate.passwords(),
+			phone: state.tab === 'mobile' ? validate.phone() : false,
+			email: state.tab === 'email' ? validate.email() : false,
+		}
+
+		// Check if validation passes
+		let validationPasses = null
+
+		// Get all values in an array
+		const validationErrsValues = Object.values(validationErrors)
+
+		// Return false if no error
+		// Return the errObj if validation fails
+		if (validationErrsValues.every((v) => v === false)) {
+			validationPasses = true
+		} else {
+			validationPasses = false
+		}
+
+		// Show loading animation
+		// @todo
+
+		// If validation fails, show errors
+		if (validationPasses) {
+			window.location.href = `/success.html`
+		}
+
+		// If validation passes, redirect to success page
+
+		console.log(validationPasses)
 	})
 })()

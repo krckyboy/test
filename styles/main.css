@@ -142,6 +142,11 @@ body {
   background: #408a60;
 }
 
+.h2 {
+  font-size: 24px;
+  color: #408a60;
+}
+
 .label {
   font-weight: 600;
   font-size: 18px;
