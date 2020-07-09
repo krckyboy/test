@@ -112,7 +112,13 @@
 			</div>
 		</header>
 		<main class="main content">
-			<div class="container container--wide container--outer">
+			<img
+				src="assets/spinner.svg"
+				alt="Spinner"
+				id="spinner"
+				class="hide offTheScreen"
+			/>
+			<div class="container container--wide container--outer" id="main">
 				<h1 class="h1">Register</h1>
 				<div class="container--wide container--main">
 					<form class="form container--narrow" id="form">
@@ -202,9 +208,7 @@
 							</div>
 							<fieldset class="formGroup">
 								<div class="formGroup__checkbox">
-									<span class="text--err" id="errorTerms"
-										></span
-									>
+									<span class="text--err" id="errorTerms"></span>
 									<div class="checkboxContainer">
 										<input
 											class="input--checkbox"
@@ -233,7 +237,7 @@
 								</div>
 							</fieldset>
 						</fieldset>
-						<button type="submit" class="button button--submit">
+						<button type="submit" id="submit" class="button button--submit">
 							REGISTER
 						</button>
 					</form>

@@ -109,6 +109,28 @@
 			document.getElementById('errorRepeatPassword').innerText = ''
 			document.getElementById('errorTerms').innerText = ''
 		},
+		showLoading: () => {
+			const spinner = document.getElementById('spinner')
+			const mainContainer = document.getElementById('main')
+			const submitButton = document.getElementById('submit')
+
+			submitButton.disabled = true
+			submitButton.classList.add('disabled')
+			spinner.classList.remove('hide')
+			spinner.classList.remove('offTheScreen')
+			mainContainer.classList.add('dimmed')
+		},
+		hideLoading: () => {
+			const spinner = document.getElementById('spinner')
+			const mainContainer = document.getElementById('main')
+			const submitButton = document.getElementById('submit')
+
+			submitButton.disabled = false
+			submitButton.classList.remove('disabled')
+			spinner.classList.add('hide')
+			spinner.classList.add('offTheScreen')
+			mainContainer.classList.remove('dimmed')
+		},
 	}
 
 	const validate = {
@@ -212,6 +234,12 @@
 	// On submit
 	const form = document.getElementById('form')
 
+	form.addEventListener('mouseover', function (e) {
+		if (state.loading) {
+			document.getElementById('submit').disabled = true
+		}
+	})
+
 	form.addEventListener('submit', function (e) {
 		e.preventDefault()
 
@@ -232,16 +260,18 @@
 		// Get all values in an array
 		const validationErrsValues = Object.values(validationErrors)
 
+		// Everything is passing, redirect to success page
 		if (validationErrsValues.every((v) => v === false)) {
-			// Everything is passing, redirect to success page
-			window.location.href = `/success.html`
+			// Show loading animation
+			update.showLoading()
+
+			setTimeout(() => {
+				update.hideLoading()
+				window.location.href = `/success.html`
+			}, 1500)
 		} else {
 			// Display errors
 			update.displayErrors(validationErrors)
 		}
-
-		// @todo Show loading animation
-
-		console.log(validationErrors)
 	})
 })()

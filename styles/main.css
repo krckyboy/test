@@ -75,6 +75,7 @@ body {
   background-color: #111111;
   padding-top: 40px;
   padding-bottom: 88px;
+  position: relative;
 }
 
 body {
@@ -474,5 +475,37 @@ body {
   .logo {
     font-size: 36px;
   }
+}
+
+#spinner {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 300px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.dimmed {
+  opacity: 0.3;
+}
+
+#main {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.offTheScreen {
+  left: -3000px !important;
+}
+
+.disabled {
+  cursor: wait;
 }
 /*# sourceMappingURL=main.css.map */

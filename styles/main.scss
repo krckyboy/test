@@ -70,6 +70,7 @@ body {
 	background-color: #111111;
 	padding-top: 40px;
 	padding-bottom: 88px;
+	position: relative;
 }
 
 body {
@@ -414,4 +415,33 @@ body {
 	@media (min-width: 640px) {
 		font-size: 36px;
 	}
+}
+
+#spinner {
+	position: absolute;
+	left: 50%;
+	top: 40%;
+	width: 300px;
+	transform: translate(-50%, -50%);
+	transition: opacity 0.3s;
+}
+
+.hide {
+	opacity: 0;
+}
+
+.dimmed {
+	opacity: 0.3;
+}
+
+#main {
+	transition: opacity 0.3s;
+}
+
+.offTheScreen {
+	left: -3000px !important;
+}
+
+.disabled {
+	cursor: wait;
 }
