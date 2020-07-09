@@ -35,6 +35,30 @@ fieldset {
 }
 // </Resetting styles>
 
+// <Sticky footer>
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+	flex-shrink: 0;
+}
+
+// </Sticky footer>
+
 .header,
 .footer {
 	background-color: #000000;
@@ -83,7 +107,7 @@ body {
 }
 
 .transition {
-    transition: all .3s;
+	transition: all 0.3s;
 }
 
 .form,
@@ -125,8 +149,8 @@ body {
 }
 
 .h2 {
-    font-size: 24px;
-    color: #408a60;
+	font-size: 24px;
+	color: #408a60;
 }
 
 .label {
@@ -233,12 +257,12 @@ body {
 		display: flex;
 		flex-direction: column;
 		align-content: flex-start;
-    }
-    
-    &--fixedHeight {
-        transition: opacity .3s;
-        min-height: 88px;
-    }
+	}
+
+	&--fixedHeight {
+		transition: opacity 0.3s;
+		min-height: 88px;
+	}
 }
 
 .currencyContainer {
