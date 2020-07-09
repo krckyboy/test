@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,IAAI;AACJ,IAAI,CAAC;EACJ,MAAM,EAAE,IAAI;CACZ;;AAED,AAAA,IAAI,CAAC;EACJ,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,MAAM,EAAE,IAAI;CACZ;;AAED,AAAA,QAAQ,CAAC;EACR,IAAI,EAAE,QAAQ;CACd;;AAED,AAAA,OAAO,CAAC;EACP,WAAW,EAAE,CAAC;CACd",
+    "sources": [
+        "stickyFooter.scss"
+    ],
+    "names": [],
+    "file": "stickyFooter.css"
+}

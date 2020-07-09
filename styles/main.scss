@@ -1,63 +1,6 @@
-// <Resetting styles>
-*,
-*::before,
-*::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: inherit;
-}
-
-html {
-	font-size: 62.5%;
-}
-
-body {
-	box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: normal;
-	font-style: normal;
-	font-size: inherit;
-}
-
-ul {
-	list-style: none;
-}
-
-fieldset {
-	border: none;
-}
-// </Resetting styles>
-
-// <Sticky footer>
-html,
-body {
-	height: 100%;
-}
-
-body {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-}
-
-.content {
-	flex: 1 0 auto;
-}
-
-.footer {
-	flex-shrink: 0;
-}
-
-// </Sticky footer>
+@import 'reset';
+@import 'stickyFooter';
+@import 'utility';
 
 .header,
 .footer {
@@ -150,8 +93,8 @@ body {
 }
 
 .h2 {
-	font-size: 24px;
-	color: #408a60;
+	font-size: 30px;
+	margin-bottom: 24px;
 }
 
 .label {
@@ -180,11 +123,6 @@ body {
 		font-size: 16px;
 		margin-bottom: initial;
 		margin-left: 12px;
-	}
-
-	&--emphasized {
-		color: #408a60;
-		font-weight: bold;
 	}
 }
 
@@ -405,6 +343,15 @@ body {
 
 		text-align: right;
 	}
+
+	&--success {
+		color: #408a60;
+	}
+
+	&--emphasized {
+		color: #408a60;
+		font-weight: bold;
+	}
 }
 
 .logo {
@@ -426,22 +373,12 @@ body {
 	transition: opacity 0.3s;
 }
 
-.hide {
-	opacity: 0;
-}
-
-.dimmed {
-	opacity: 0.3;
-}
-
 #main {
 	transition: opacity 0.3s;
 }
 
-.offTheScreen {
-	left: -3000px !important;
-}
-
-.disabled {
-	cursor: wait;
+.p {
+	color: white;
+	font-weight: 400;
+	font-size: 16px;
 }

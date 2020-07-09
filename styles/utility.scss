@@ -1,0 +1,15 @@
+.hide {
+	opacity: 0;
+}
+
+.dimmed {
+	opacity: 0.3;
+}
+
+.offTheScreen {
+	left: -3000px !important;
+}
+
+.disabled {
+	cursor: wait;
+}

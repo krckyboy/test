@@ -64,6 +64,22 @@ body {
       flex-shrink: 0;
 }
 
+.hide {
+  opacity: 0;
+}
+
+.dimmed {
+  opacity: 0.3;
+}
+
+.offTheScreen {
+  left: -3000px !important;
+}
+
+.disabled {
+  cursor: wait;
+}
+
 .header,
 .footer {
   background-color: #000000;
@@ -173,8 +189,8 @@ body {
 }
 
 .h2 {
-  font-size: 24px;
-  color: #408a60;
+  font-size: 30px;
+  margin-bottom: 24px;
 }
 
 .label {
@@ -210,11 +226,6 @@ body {
   font-size: 16px;
   margin-bottom: initial;
   margin-left: 12px;
-}
-
-.label--emphasized {
-  color: #408a60;
-  font-weight: bold;
 }
 
 .button {
@@ -465,6 +476,15 @@ body {
   text-align: right;
 }
 
+.text--success {
+  color: #408a60;
+}
+
+.text--emphasized {
+  color: #408a60;
+  font-weight: bold;
+}
+
 .logo {
   font-weight: bold;
   font-size: 20px;
@@ -488,24 +508,14 @@ body {
   transition: opacity 0.3s;
 }
 
-.hide {
-  opacity: 0;
-}
-
-.dimmed {
-  opacity: 0.3;
-}
-
 #main {
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 
-.offTheScreen {
-  left: -3000px !important;
-}
-
-.disabled {
-  cursor: wait;
+.p {
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
 }
 /*# sourceMappingURL=main.css.map */
