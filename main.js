@@ -91,96 +91,90 @@ const state = {
 				}, 300)
 			}
 		},
+		displayErrors: (errorObject) => {
+			const { password, repeatPassword, phone, email, terms } = errorObject
+
+			if (password)
+				document.getElementById('errorPassword').innerText = password
+			if (repeatPassword)
+				document.getElementById(
+					'errorRepeatPassword'
+				).innerText = repeatPassword
+			if (phone) document.getElementById('errorPhone').innerText = phone
+			if (email) document.getElementById('errorEmail').innerText = email
+			if (terms) document.getElementById('errorTerms').innerText = terms
+		},
+		clearErrors: () => {
+			document.getElementById('errorPhone').innerText = ''
+			document.getElementById('errorEmail').innerText = ''
+			document.getElementById('errorPassword').innerText = ''
+			document.getElementById('errorRepeatPassword').innerText = ''
+			document.getElementById('errorTerms').innerText = ''
+		},
 	}
 
 	const validate = {
-		passwords: () => {
+		password: () => {
 			const password = document.getElementById('password').value
-			const repeatPassword = document.getElementById('repeatPassword').value
-
-			const errObj = {
-				password: false,
-				repeatPassword: false,
-				passwordsMatch: false,
-			}
+			let errorMessage = false
 
 			if (validator.isEmpty(password)) {
-				errObj.password = 'Please enter password.'
+				errorMessage = 'This field is required!'
 			}
+
+			return errorMessage
+		},
+		repeatPassword: () => {
+			const password = document.getElementById('password').value
+			const repeatPassword = document.getElementById('repeatPassword').value
+			let errorMessage = false
 
 			if (validator.isEmpty(repeatPassword)) {
-				errObj.repeatPassword = 'Please repeat password.'
+				errorMessage = 'This field is required!'
 			}
 
-			if (!errObj.password && !errObj.repeatPassword) {
-				if (password !== repeatPassword) {
-					errObj.passwordsMatch = 'Passwords should match.'
-				}
+			if (password !== repeatPassword) {
+				errorMessage = 'Passwords do not match!'
 			}
 
-			// Get all values in an array
-			const errObjValues = Object.values(errObj)
-
-			// Return false if no error
-			// Return the errObj if validation fails
-			if (errObjValues.every((v) => v === false)) {
-				return false
-			} else {
-				return errObj
-			}
+			return errorMessage
 		},
 		phone: () => {
 			const phone = document.getElementById('number').value
-
-			const errObj = {
-				number: false,
-				invalidNumber: false,
-			}
+			let errorMessage = false
 
 			if (validator.isEmpty(phone)) {
-				errObj.number = 'Please enter phone number.'
+				errorMessage = 'This field is required!'
 			} else {
 				if (!validator.isMobilePhone(phone)) {
-					errObj.invalidNumber = 'Please enter valid phone number.'
+					errorMessage = 'Invalid phone number!'
 				}
 			}
 
-			// Get all values in an array
-			const errObjValues = Object.values(errObj)
-
-			// Return false if no error
-			// Return the errObj if validation fails
-			if (errObjValues.every((v) => v === false)) {
-				return false
-			} else {
-				return errObj
-			}
+			return errorMessage
 		},
 		email: () => {
 			const email = document.getElementById('emailInput').value
 
-			const errObj = {
-				email: false,
-				invalidEmail: false,
-			}
+			let errorMessage = false
 
 			if (validator.isEmpty(email)) {
-				errObj.email = 'Please enter your email.'
+				errorMessage = 'This field is required!'
 			} else {
 				if (!validator.isEmail(email)) {
-					errObj.invalidEmail = 'Please enter valid email.'
+					errorMessage = 'Invalid email!'
 				}
 			}
 
-			// Get all values in an array
-			const errObjValues = Object.values(errObj)
+			return errorMessage
+		},
+		terms: () => {
+			const terms = document.getElementById('terms').checked
 
-			// Return false if no error
-			// Return the errObj if validation fails
-			if (errObjValues.every((v) => v === false)) {
+			if (terms) {
 				return false
 			} else {
-				return errObj
+				return 'You need to agree to the terms and conditions!'
 			}
 		},
 	}
@@ -223,38 +217,33 @@ const state = {
 	form.addEventListener('submit', function (e) {
 		e.preventDefault()
 
+		// Clear errors
+		update.clearErrors()
+
 		// Validate fields
 		// If the result is false, there's no error.
 		const validationErrors = {
-			password: validate.passwords(),
+			password: validate.password(),
+			repeatPassword: validate.repeatPassword(),
 			phone: state.tab === 'mobile' ? validate.phone() : false,
 			email: state.tab === 'email' ? validate.email() : false,
+			terms: validate.terms(),
 		}
 
-		// Check if validation passes
-		let validationPasses = null
-
+		// Check if each validation passes,
 		// Get all values in an array
 		const validationErrsValues = Object.values(validationErrors)
 
-		// Return false if no error
-		// Return the errObj if validation fails
 		if (validationErrsValues.every((v) => v === false)) {
-			validationPasses = true
-		} else {
-			validationPasses = false
-		}
-
-		// Show loading animation
-		// @todo
-
-		// If validation fails, show errors
-		if (validationPasses) {
+			// Everything is passing, redirect to success page
 			window.location.href = `/success.html`
+		} else {
+			// Display errors
+			update.displayErrors(validationErrors)
 		}
 
-		// If validation passes, redirect to success page
+		// @todo Show loading animation
 
-		console.log(validationPasses)
+		console.log(validationErrors)
 	})
 })()

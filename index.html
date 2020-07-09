@@ -118,9 +118,10 @@
 					<form class="form container--narrow" id="form">
 						<fieldset class="formGroup formGroup--fixedHeight">
 							<div id="phoneFormGroup" class="transition">
-								<label class="label--block label" for="number"
-									>Phone number</label
-								>
+								<label class="label label--flex" for="number"
+									><p>Phone number</p>
+									<span class="text--err" id="errorPhone"></span
+								></label>
 								<input
 									class="input"
 									type="tel"
@@ -134,7 +135,10 @@
 								class="transition"
 								id="emailFormGroup"
 							>
-								<label class="label--block label" for="emailInput">Email</label>
+								<label class="label label--flex" for="emailInput"
+									><p>Email</p>
+									<span class="text--err" id="errorEmail"></span
+								></label>
 								<input
 									class="input"
 									type="email"
@@ -144,7 +148,10 @@
 							</div>
 						</fieldset>
 						<fieldset class="formGroup">
-							<label class="label--block label" for="password">Password</label>
+							<label class="label label--flex" for="password"
+								><p>Password</p>
+								<span class="text--err" id="errorPassword"></span
+							></label>
 							<input
 								class="input"
 								type="password"
@@ -154,9 +161,10 @@
 							/>
 						</fieldset>
 						<fieldset class="formGroup">
-							<label class="label--block label" for="repeatPassword"
-								>Repeat password</label
-							>
+							<label class="label label--flex" for="repeatPassword"
+								><p>Repeat password</p>
+								<span class="text--err" id="errorRepeatPassword"></span
+							></label>
 							<input
 								class="input"
 								type="password"
@@ -194,6 +202,9 @@
 							</div>
 							<fieldset class="formGroup">
 								<div class="formGroup__checkbox">
+									<span class="text--err" id="errorTerms"
+										></span
+									>
 									<div class="checkboxContainer">
 										<input
 											class="input--checkbox"
@@ -202,8 +213,11 @@
 											id="terms"
 										/>
 										<label for="terms" class="label label__checkbox"
-											>I agree to the <span>terms and conditions</span></label
-										>
+											>I agree to the
+											<span class="label--emphasized"
+												>terms and conditions</span
+											>
+										</label>
 									</div>
 									<div class="checkboxContainer">
 										<input

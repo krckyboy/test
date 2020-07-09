@@ -50,7 +50,7 @@ body {
 }
 
 .content {
-    flex: 1 0 auto;
+	flex: 1 0 auto;
 }
 
 .footer {
@@ -158,6 +158,12 @@ body {
 	font-size: 18px;
 	margin-bottom: 12px;
 
+	&--flex {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
 	&--block {
 		display: block;
 	}
@@ -173,11 +179,11 @@ body {
 		font-size: 16px;
 		margin-bottom: initial;
 		margin-left: 12px;
+	}
 
-		span {
-			color: #408a60;
-			font-weight: bold;
-		}
+	&--emphasized {
+		color: #408a60;
+		font-weight: bold;
 	}
 }
 
@@ -385,6 +391,18 @@ body {
 	&__link.active {
 		background-color: #408a60;
 		border: 2px solid transparent;
+	}
+}
+
+.text {
+	&--err {
+		font-family: Rajdhani;
+		font-style: normal;
+		font-size: 14px;
+		font-weight: 400;
+		color: #eb5757;
+
+		text-align: right;
 	}
 }
 
