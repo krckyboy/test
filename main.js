@@ -1,13 +1,11 @@
-// Global state of the app
-// Exposing it to the window for development purposes.
-// @todo Move it inside the IIFE in production.
-const state = {
-	tab: 'mobile',
-	loading: false,
-	timeoutFunction: null,
-}
-
 ;(function () {
+	// Global state of the app
+	const state = {
+		tab: 'mobile',
+		loading: false,
+		timeoutFunction: null,
+	}
+
 	const update = {
 		nav: () => {
 			const tabPhone = document.getElementById('tabPhone')
