@@ -11,4 +11,4 @@ SASS (SCSS) was used for styling for the ease of use and cleaner code.
 
 No JavaScript frameworks were used in this project, only vanilla JavaScript.
 
-Packages are used for compressing and prefixing CSS, but that's only for production, none of it required for development. To prefix and compile CSS, use the script: ``npm run compress:css``.
+Packages are used for compressing and prefixing CSS, but that's only for production, none of it required for development. To prefix and compile CSS, use the script: ``npm run compile:css``.
