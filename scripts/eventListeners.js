@@ -4,7 +4,7 @@ import validate from './validate.js'
 
 export default () => {
 	// Set up event listeners on the navigation
-	if (location.pathname === '/test' || location.pathname === '/' || location.pathname === '/index.html') {
+	if (location.pathname === '/test/' || location.pathname === '/test' || location.pathname === '/' || location.pathname === '/index.html') {
 		const headerLinks = document.getElementById('headerLinks')
 		headerLinks.addEventListener('click', async function (e) {
 			if (e.target.id === 'mobile') {
