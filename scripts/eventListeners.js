@@ -63,4 +63,16 @@ export default () => {
 			update.displayErrors(validationErrors)
 		}
 	})
+
+	const logo = document.getElementById('logo')
+	logo.addEventListener('click', function(e)  {
+		e.preventDefault()
+
+		if(window.location.hostname === 'krckyboy.github.io') {
+			window.location.href = `${window.location.origin}/test`
+		} else {
+			window.location.href = `${window.location.origin}`
+		}
+
+	})
 }
