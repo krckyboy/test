@@ -121,6 +121,8 @@ body {
 	}
 
 	&__checkbox {
+		display: flex;
+		cursor: pointer;
 		font-weight: 400;
 		font-size: 16px;
 		margin-bottom: initial;
@@ -188,6 +190,7 @@ body {
 	}
 
 	&--checkbox {
+		display: none;
 		&:focus,
 		&:active {
 			outline-color: initial;
@@ -261,6 +264,37 @@ body {
 
 	&:not(:first-child) {
 		margin-top: 8px;
+	}
+
+	&__input {
+		display: none;
+
+		&:checked + label span::after {
+			opacity: 1;
+		}
+	}
+
+	&__customCheckbox{
+		height: 20px;
+		width: 20px;
+
+		border: 3px solid #408a60;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		margin-right: 8px;
+
+		&::after {
+			content: '';
+			display: block;
+			height: 8px;
+			width: 8px;
+			background-color: #408a60;
+			transition: 0.3s opacity;
+			opacity: 0;
+		}
 	}
 }
 
