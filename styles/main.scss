@@ -116,6 +116,8 @@ body {
 		font-weight: 400;
 		font-size: 16px;
 		margin-bottom: initial;
+		display: flex;
+		cursor: pointer;
 	}
 
 	&__checkbox {
@@ -216,11 +218,40 @@ body {
 	align-items: center;
 
 	&__input {
-		margin-right: 8px;
+		display: none;
+
+		&:checked + label span::after {
+			opacity: 1;
+		}
 	}
 
 	&:not(:first-child) {
 		margin-top: 8px;
+	}
+
+	&__customRadio {
+		height: 20px;
+		width: 20px;
+
+		border: 3px solid #408a60;
+		border-radius: 50%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		margin-right: 8px;
+
+		&::after {
+			content: '';
+			display: block;
+			height: 8px;
+			width: 8px;
+			border-radius: 50%;
+			background-color: #408a60;
+			transition: 0.3s opacity;
+			opacity: 0;
+		}
 	}
 }
 

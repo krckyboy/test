@@ -192,8 +192,9 @@
 										id="dollar"
 										checked
 									/>
-									<label class="label label__currency" for="dollar"
-										>Dollar $</label
+									<label class="label label__currency" for="dollar">
+										<span class="currencyContainer__customRadio"></span> Dollar
+										$</label
 									>
 								</div>
 								<div class="currencyContainer">
@@ -203,7 +204,10 @@
 										name="currency"
 										id="euro"
 									/>
-									<label class="label label__currency" for="euro">Euro €</label>
+									<label class="label label__currency" for="euro">
+										<span class="currencyContainer__customRadio"></span>Euro
+										€</label
+									>
 								</div>
 							</div>
 							<fieldset class="formGroup">
@@ -215,12 +219,11 @@
 											type="checkbox"
 											name="terms"
 											id="terms"
+											required
 										/>
 										<label for="terms" class="label label__checkbox"
 											>I agree to the
-											<span class="text--emphasized"
-												>terms and conditions</span
-											>
+											<span class="text--emphasized">terms and conditions</span>
 										</label>
 									</div>
 									<div class="checkboxContainer">
@@ -271,6 +274,6 @@
 			type="text/javascript"
 			src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.1.0/validator.min.js"
 		></script>
-		<script type='module' src="main.js" defer></script>
+		<script type="module" src="main.js" defer></script>
 	</body>
 </html>
