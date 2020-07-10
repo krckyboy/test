@@ -5,7 +5,7 @@ Assignment for a job application by Citrus Systems.
 You can view the site [here](https://krckyboy.github.io/test/).
 
 ## Stack
-The only external package that was used in this project is [validator](https://www.npmjs.com/package/validator) and the main purpose of it was to check if mail and phone mumber is valid, pretty much.
+The only external package that was used in this project is [validator](https://www.npmjs.com/package/validator) and the main purpose of it was to check if email and phone mumber is valid, pretty much.
 
 SASS (SCSS) was used for styling for the ease of use and cleaner code.
 
