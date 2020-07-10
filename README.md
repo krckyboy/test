@@ -5,8 +5,10 @@ Assignment for a job application by Citrus Systems.
 You can view the site [here](https://krckyboy.github.io/test/).
 
 ## Stack
-The only external package that was used in this project is [validator](https://www.npmjs.com/package/validator) and the main purpose of it was to check if the email is valid, pretty much. I don't include the packages for compressing and prefixing CSS, since that's only used for production.
+The only external package that was used in this project is [validator](https://www.npmjs.com/package/validator) and the main purpose of it was to check if the email is valid, pretty much.
 
 SASS (SCSS) was used for styling for the ease of use and cleaner code.
 
 No JavaScript frameworks were used in this project, only vanilla JavaScript.
+
+Packages are used for compressing and prefixing CSS, but that's only for production, none of it required for development. To prefix and compile CSS, use the script: ``npm run compress:css``.
