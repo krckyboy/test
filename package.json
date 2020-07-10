@@ -1,23 +1,30 @@
 {
-  "name": "test",
-  "version": "1.0.0",
-  "description": "Assignment for a job application by Citrus Systems.",
-  "main": "index.html",
-  "dependencies": {
-    "validator": "^13.1.1"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/krckyboy/test.git"
-  },
-  "author": "Dušan Todorović Krcky",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/krckyboy/test/issues"
-  },
-  "homepage": "https://github.com/krckyboy/test#readme"
+	"name": "test",
+	"version": "1.0.0",
+	"description": "Assignment for a job application by Citrus Systems.",
+	"main": "index.html",
+	"dependencies": {
+		"validator": "^13.1.1"
+	},
+	"devDependencies": {
+		"autoprefixer": "^9.8.4",
+		"concurrently": "^5.2.0",
+		"node-sass": "^4.14.1",
+		"postcss-cli": "^7.1.1"
+	},
+	"scripts": {
+		"prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" styles/main.css -o styles/main.prefix.css",
+    "compress:css": "node-sass styles/main.prefix.css styles/main.final.css --output-style compressed",
+    "compile:css": "concurrently \"npm run prefix:css\" \"npm run compress:css\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/krckyboy/test.git"
+	},
+	"author": "Dušan Todorović Krcky",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/krckyboy/test/issues"
+	},
+	"homepage": "https://github.com/krckyboy/test#readme"
 }
