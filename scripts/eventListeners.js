@@ -56,7 +56,7 @@ export default () => {
 
 			setTimeout(() => {
 				update.hideLoading()
-				window.location.href = `/success.html`
+				window.location.href = `${window.location.pathname}success.html`
 			}, 1500)
 		} else {
 			// Display errors
